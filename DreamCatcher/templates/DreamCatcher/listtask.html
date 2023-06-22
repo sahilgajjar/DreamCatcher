@@ -6,7 +6,10 @@
 {% endblock %}
 
 {% block main %}
-    
+        <!-- task delete -->
+        <div class="delete-task-card">
+            {{ message }}  
+        </div>
         {% for task in tasks %}  
         <div class="list-task-con">
             <div class="task-one-row">
@@ -18,10 +21,10 @@
             <br>
             <br>
             <div class="task-last-row">
-                <div>
-                    <button>Delete</button>
-                    <button>reshedule</button>
-                    <button>Mark as done</button>
+                <div class="task-button-row">
+                    <a href="{% url 'delete' task_id=task.id %}">Delete</a>
+                    <a>reshedule</a>
+                    <a>Mark as done</a>
                 </div>
                 <div class="task-last-row-last-item">
                     <!-- <div id="circle" ></div> -->

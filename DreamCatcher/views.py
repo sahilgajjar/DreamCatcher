@@ -8,7 +8,16 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Task, User 
 from datetime import datetime
+from django.shortcuts import redirect
 # Create your views here.
+
+@login_required
+def deltask(request, task_id):
+    
+    tasks = Task.objects.get(id=task_id)
+    tasks.delete()
+    
+    return redirect('listtask')
 
 @login_required
 def listtask(request):

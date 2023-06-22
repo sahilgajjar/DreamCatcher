@@ -98,6 +98,7 @@ main {
 /* body of the class */
 
 main {
+    position: relative;
     padding: 0px;
     margin: 0px;
     min-height: 100vh;
