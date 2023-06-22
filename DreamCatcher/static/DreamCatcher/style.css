@@ -1,0 +1,90 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.entry-card {
+    width: 100vw; 
+    background-image: linear-gradient(to bottom,#f2f1f6, #e4f1fb);
+
+}
+
+img {
+    height: 100vh;
+    position: relative;
+}
+
+/* login form */ 
+.form-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+.form {
+    padding: 5px;  
+    text-align: center;
+}
+
+
+#form-title {
+    font-weight: 500;
+}
+#form-subtitle {
+    font-weight: 350;
+}
+#form-register-text {
+    font-size: 14px;
+}
+
+
+.text-card {
+    border: 1px solid transparent;
+    border-radius: 8px; 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: 16px;
+    width: 400px;
+    height: 35px;
+    margin: 10px;
+    padding:8px 12px;
+}
+
+.icon {
+    font-size: 30px;
+}
+/* this is to remove all default decorations from textbox */
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+/* finish */
+
+.login-button-card {
+    width: 200px;
+    height: 40px;
+    margin: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: white;
+    background-color: #33a1fd;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.5s;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.login-button-card:hover {
+    background-color: #85c7fe;
+}

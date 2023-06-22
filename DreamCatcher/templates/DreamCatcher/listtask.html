@@ -1,0 +1,37 @@
+{% extends "DreamCatcher/layout0.html" %}
+{% load static %}
+
+{% block stylesheet %}
+    <link href="{% static 'DreamCatcher/listtask.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    
+        {% for task in tasks %}  
+        <div class="list-task-con">
+            <div class="task-one-row">
+                <p>{{ task.name }}</p>
+                <p>Due at : {{ task.datetime }}</p>
+            </div>
+            <hr>
+            {{ task.description }}
+            <br>
+            <br>
+            <div class="task-last-row">
+                <div>
+                    <button>Delete</button>
+                    <button>reshedule</button>
+                    <button>Mark as done</button>
+                </div>
+                <div class="task-last-row-last-item">
+                    <!-- <div id="circle" ></div> -->
+                    {{ task.label }} 
+                </div>
+            </div> 
+        </div>
+    
+        {% empty %}
+            Not any task added yet
+        {% endfor %}
+    
+{% endblock %}

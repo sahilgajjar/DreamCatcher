@@ -1,0 +1,59 @@
+:root {
+    --primary-color: white;
+    --bg-color: #f4f4f4;
+
+}
+
+main {
+    background-color: var(--bg-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.list-task-con {
+    padding: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--primary-color);
+}
+
+.task-one-row{
+    padding: 0rem 0rem;
+    margin: 0;
+    display:flex;
+    justify-content: space-between;
+}
+
+.task-one-row p{
+    padding: 0;
+    margin: 0;
+}
+
+.task-last-row {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+#circle {
+    display: inline-block;
+    background-color: red;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.task-last-row-last-item {
+    background-color: #34a853;
+    color: white;
+    font-weight: 600;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}

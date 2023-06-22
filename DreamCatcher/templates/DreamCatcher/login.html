@@ -1,0 +1,21 @@
+{% extends "DreamCatcher/layout1.html" %}
+{% block card %} 
+    <div class="form-card">
+
+        <h1 id="form-title">Hello Again!</h1>
+        <h3 id="form-subtitle">Welcome Back You've been missed!</h3>
+
+        <form class="form login-form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" name="username" class="text-card" placeholder="Enter username">  
+            <br>
+            <input type="password" name="password" class="text-card" placeholder="Password">
+            <br>
+            {% if message %}
+            <h5 style="color:red;font-size:14px;font-weight:normal;">{{ message }}</h5>
+            {% endif %}
+            <input type="submit" value="Login" class="login-button-card">
+        </form> 
+        <h4 id="form-register-text">Not a user? <a href="{% url 'register' %}" style="color:#1877f2">Register here</a></h4>
+    </div>
+{% endblock %}

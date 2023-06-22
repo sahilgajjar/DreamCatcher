@@ -1,0 +1,24 @@
+{% extends "DreamCatcher/layout1.html" %}
+{% block card %} 
+    <div class="form-card">
+
+        <h1 id="form-title">Register</h1>
+        <h3 id="form-subtitle">Start your journey with DreamCatcher !</h3>
+
+        <form class="form register-form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input type="text" name="username" class="text-card" placeholder="Enter username" id="username">  
+            <br>
+            <input type="email" name="email" class="text-card" placeholder="Enter email" id="email">  
+            <br>
+            <input type="password" name="password" class="text-card" placeholder="Password" id="password">
+            <br>
+            <input type="password" name="confirmation" class="text-card" placeholder="Confirm Password" id="confirmation">
+            <br>
+            <input type="submit" value="Register" class="login-button-card" id="submit">
+        </form> 
+
+        <h4 id="form-register-text">Already a user? <a href="{% url 'login' %}" style="color:#1877f2">Login here</a></h4>
+
+    </div>
+{% endblock %}

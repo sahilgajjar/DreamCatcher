@@ -1,0 +1,201 @@
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+    background-color: var(--bg-color);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 30px;
+    background-color: var(--primary-color);  
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+}
+
+/* text field */
+.task-name-in {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.task-name-in:hover {
+    outline: none;
+}
+
+.task-name-in:focus{
+    outline: none;
+}
+
+/* text area */
+.task-details-in {
+    flex-grow: 2;
+    padding: 10px; 
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.task-details-in:hover {
+    outline: none;
+}
+
+/* time and date */
+.time-container {
+    flex-grow: 1;
+    padding: 1.5rem 0rem;
+}
+
+.label {
+    color:#3c4043;
+}
+
+.time {
+    color: black;
+}
+
+.date {
+    color: black;
+}
+
+/* label */
+.label-container {
+    flex-grow: 1;
+    padding: 1rem 0rem;
+    border-bottom: 1px dotted #3c4043;
+}
+
+.color-in {
+    margin-left: 20px;
+}
+
+/* clear and reset */
+.button-container{
+    margin: 0rem auto;
+    margin-top : 1rem;
+}
+
+.task-clear-in {
+    margin-right: 3rem; 
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 18px;
+    border: 0px solid transparent;
+    background-color:#fdca40;
+    font-weight: 400;
+    color: black;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.task-clear-in:hover{
+    background-color: #33a1fd;
+}
+
+.task-add-in{
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 18px;
+    border: 0px solid transparent;
+    background-color:#fdca40;
+    font-weight: 400;
+    color: black;
+    border-radius: 4px;
+    transition: background-color 0.8s ease;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.task-add-in:hover{
+    background-color: #33a1fd;
+}
+
+
+/* recent task */
+.recent-tasks {
+    color: black;
+    padding: 1rem;
+    margin-left: 5rem; 
+    height: 60vh;
+    height: 60svh;
+}
+
+.recent-tasks ul{
+    margin: 0;
+    padding: 0;
+}
+
+.task-list-container {
+    padding: 1.5rem 0rem;
+}
+
+.task-list-container li{
+    list-style: none; 
+}
+
+.task-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 1rem;
+    height: 2.5rem;
+    width: 30vw;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: white;
+    z-index: 1;
+}
+
+.task-label:hover {
+    background-color: #f5f5f5;
+}
+.task-mark-as-done {
+    position: absolute;
+    z-index: 2;
+    background-color: #4285f4;  
+    color: white;
+    width: 8rem;
+    font-weight: 600;
+    border: 0px;
+    border-radius: 0px 0px 5px 5px;
+    height: 0.8rem;
+    margin-left: 1rem;
+    margin-top: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: opacity, height 0.05s ease-out;
+}
+
+.task-mark-as-done p{
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.task-mark-as-done:hover {
+    height: 2rem;
+}
+
+.task-mark-as-done:hover p{
+    opacity: 1;
+}
+
+.task-mark-as-done:active {
+    background-color: #85b0f8;
+}
+
+
