@@ -73,10 +73,3 @@ main {
     font-size: 14px;
 }
 
-.delete-task-card {
-    position: absolute;
-    height: 200px;
-    background-color: red; 
-    color: white;
-    font-weight: 600;
-}
