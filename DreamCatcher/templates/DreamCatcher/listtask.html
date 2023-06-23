@@ -4,8 +4,32 @@
 {% block stylesheet %}
     <link href="{% static 'DreamCatcher/listtask.css' %}" rel="stylesheet">
 {% endblock %}
-
+{% block script %}
+    <script>
+        // Wait for the DOM to be ready
+        document.addEventListener("DOMContentLoaded", function() {
+            var messagePopup = document.querySelector('.message-pop-up');
+            messagePopup.style.opacity = '1';
+            setTimeout(function() {
+                messagePopup.style.opacity = '0';
+                setTimeout(function() {
+                    messagePopup.style.display = 'none';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+{% endblock %}
+    
 {% block main %}
+        {% if messages %}
+            <div class="message-pop-up">
+                {% for message in messages %}
+                    {{ message }}    
+                {% endfor %}
+            </div>
+        {% else %}
+        {% endif %}
+    
         {% for task in tasks %}  
         <div class="list-task-con">
             <div class="task-one-row">
@@ -20,7 +44,7 @@
                 <div class="task-button-row">
                     <a href="{% url 'delete' task_id=task.id %}">Delete</a>
                     <a>reshedule</a>
-                    <a>Mark as done</a>
+                    <a href="{% url 'markasdone' task_id=task.id %}">Mark as done</a>
                 </div>
                 <div class="task-last-row-last-item">
                     <!-- <div id="circle" ></div> -->
@@ -30,7 +54,9 @@
         </div>
     
         {% empty %}
-            Not any task added yet
+            <h3 style="margin: 2rem;font-weight: 400;">
+                Not any task added yet
+            </h3>
         {% endfor %}
     
 {% endblock %}

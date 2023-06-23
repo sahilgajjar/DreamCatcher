@@ -12,6 +12,7 @@ class Task(models.Model):
     description = models.CharField(max_length=800)
     datetime = models.DateTimeField()
     label = models.CharField(max_length=25)
-
+    complete = models.BooleanField(default=False)
+    
     def __str__(self):
         return f"{self.user} : {self.name}"

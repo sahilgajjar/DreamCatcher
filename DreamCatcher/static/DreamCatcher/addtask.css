@@ -1,10 +1,13 @@
+main {
+    background-color: var(--bg-color);
+}
+
 
 .container {
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 1rem 2rem;
+    justify-content: space-evenly;
     background-color: var(--bg-color);
 }
 
@@ -12,13 +15,12 @@
     display: flex;
     flex-direction: column;
     width: 45%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-left: 30px;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    padding: 20px;
     background-color: var(--primary-color);  
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 /* text field */
@@ -59,7 +61,16 @@
     padding: 1.5rem 0rem;
 }
 
+.time-container input {
+    padding: 0.5rem;
+    width: 15rem;
+    font-size: 14px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
 .label {
+    font-size: 18px;    
     color:#3c4043;
 }
 
@@ -67,15 +78,27 @@
     color: black;
 }
 
-.date {
-    color: black;
-}
-
 /* label */
 .label-container {
     flex-grow: 1;
-    padding: 1rem 0rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px dotted #3c4043;
+}
+
+.label-container select {
+    padding: 0.4rem;
+    font-size: 16px;    
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.label-container select:hover {
+    background-color: #dbdbdb;
+}
+
+.label-container select:focus{
+    background-color: #dbdbdb;
 }
 
 .color-in {
@@ -84,29 +107,13 @@
 
 /* clear and reset */
 .button-container{
-    margin: 0rem auto;
-    margin-top : 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.task-clear-in {
-    margin-right: 3rem; 
-    width: 8rem;
-    height: 2.5rem;
-    font-size: 18px;
-    border: 0px solid transparent;
-    background-color:#fdca40;
-    font-weight: 400;
-    color: black;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.task-clear-in:hover{
-    background-color: #33a1fd;
-}
-
-.task-add-in{
+.button {
     width: 8rem;
     height: 2.5rem;
     font-size: 18px;
@@ -119,7 +126,7 @@
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.task-add-in:hover{
+.button:hover{
     background-color: #33a1fd;
 }
 
@@ -165,6 +172,7 @@
 }
 .task-mark-as-done {
     position: absolute;
+    padding: 0;
     z-index: 2;
     background-color: #4285f4;  
     color: white;
@@ -199,3 +207,19 @@
 }
 
 
+.message-pop-up {
+    width: 18rem;
+    display: block;
+    opacity: 0;
+    padding: 1rem;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3cc360;
+    color: white;
+    font-size: 20px;
+    border: 1px solid gray;    
+    border-radius: 5px;
+    transition: opacity 0.5s ease-out;
+}

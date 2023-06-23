@@ -4,17 +4,42 @@
 {% block stylesheet %}
     <link href="{% static 'DreamCatcher/addtask.css' %}" rel="stylesheet">
 {% endblock %}
-    
-{% block main %}
 
+{% block script %}
+    <script>
+        // Wait for the DOM to be ready
+        document.addEventListener("DOMContentLoaded", function() {
+            var messagePopup = document.querySelector('.message-pop-up');
+            messagePopup.style.opacity = '1';
+            setTimeout(function() {
+                messagePopup.style.opacity = '0';
+                setTimeout(function() {
+                    messagePopup.style.display = 'none';
+                }, 300);
+            }, 2000);
+        });    
+    </script>
+
+{% endblock %}
+{% block main %}
+    
+    {% if messages %}
+        <div class="message-pop-up">
+            {% for message in messages %}
+                {{ message }}    
+            {% endfor %}
+        </div>
+    {% else %}
+    {% endif %}
+    
+  
     <!-- it will show the latest task here -->
     <form class="form-container" method="post" action="{% url 'addtask' %}">
             {% csrf_token %}
         
             <input type="text" name="name" class="task-name-in textfield" placeholder="Add a task" required minlength="1">
-            
             <br>
-            <textarea rows="10" name="description" class="task-details-in textarea" placeholder="Description" required minlength="5"></textarea>
+            <textarea rows="8" name="description" class="task-details-in textarea" placeholder="Description" required minlength="5"></textarea>
             <br>
             
             <div class="time-container">
@@ -23,7 +48,7 @@
             </div>
         
             <div class="label-container">
-                <label class="label">Add label : </label>
+                <label class="label">Label &nbsp;&nbsp;: </label>
                 <select name="label">
                     <option value="Urgent">Urgent</option>
                     <option value="Important">Important</option>
@@ -35,11 +60,10 @@
                 <input type="submit" class="task-add-in button" value="AddTask">
             </div> 
     
-        </form>
+    </form>
 
         <div class="recent-tasks">
         
-            <h1>Recent Tasks : </h1> 
             {% if tasks|length == 0 %}
                 <h2>No recent tasks</h2>
         
@@ -53,15 +77,17 @@
                     </li>
                 
                     <button class="task-mark-as-done">
-                    <p>Mark as done<p>
+                    <a href="{% url 'markasdone_add' task_id=task.id %}">
+                        <p>Mark as done<p>
+                    </a>
                     </button>
                 
                 </div>
             
                 {% endfor %}
             </ul>
-        
             {% endif %}
+        
         </div>
     
 {% endblock %}

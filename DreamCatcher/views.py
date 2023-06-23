@@ -9,19 +9,46 @@ from django.contrib.auth.decorators import login_required
 from .models import Task, User 
 from datetime import datetime
 from django.shortcuts import redirect
+from django.contrib import messages
 # Create your views here.
+
+@login_required
+def markasdone_add(request, task_id):
+    
+    tasks = Task.objects.get(id=task_id)
+    tasks.complete = True; 
+    tasks.save()    
+    
+    messages.success(request, 'Task Completed Successfully 🎊')
+    
+    return redirect('addtask')
+
+
+@login_required
+def markasdone_task(request, task_id):
+    
+    tasks = Task.objects.get(id=task_id)
+    tasks.complete = True; 
+    tasks.save()    
+    
+    messages.success(request, 'Task Completed Successfully 🎊')
+    
+    return redirect('listtask')
 
 @login_required
 def deltask(request, task_id):
     
     tasks = Task.objects.get(id=task_id)
     tasks.delete()
+     
+    messages.success(request, 'Task Deleated Successfully !')
     
     return redirect('listtask')
 
 @login_required
 def listtask(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(complete=False)
+
     return render(request, "DreamCatcher/listtask.html", {
         "tasks": tasks
     })
@@ -29,7 +56,7 @@ def listtask(request):
 @login_required
 def addtask(request):
     
-    tasks = Task.objects.order_by('-id')[:3]
+    tasks = Task.objects.filter(complete=False).order_by('-id')[:3]
     
     if request.method == "POST":
         
@@ -38,7 +65,6 @@ def addtask(request):
         description = content["description"] 
         date_time = content["time"] 
         label = content["label"]
-        
         time = datetime.strptime(date_time, "%Y-%m-%dT%H:%M")
         
         task = Task.objects.create(

@@ -40,7 +40,9 @@ main {
 }
 
 .task-button-row a{
+    text-decoration: none;
     cursor: default;
+    color: black;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 14px;
     padding: 5px 8px;
@@ -73,3 +75,35 @@ main {
     font-size: 14px;
 }
 
+a:link {
+      text-decoration: none;
+}
+
+a:visited {
+      text-decoration: none;
+}
+
+a:hover {
+      text-decoration: none;
+}
+
+a:active {
+      text-decoration: none;
+}
+
+.message-pop-up {
+    width: 18rem;
+    display: block;
+    opacity: 0;
+    padding: 1rem;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3cc360;
+    color: white;
+    font-size: 20px;
+    border: 1px solid gray;    
+    border-radius: 5px;
+    transition: opacity 0.5s ease-out;
+}
