@@ -1,6 +1,6 @@
 :root {
     --primary-color: white;
-    --bg-color: #f4f4f4;
+    --bg-color: #f5f5f5;
 
 }
 
@@ -10,15 +10,33 @@ main {
     padding-bottom: 1rem;
 }
 
+/*.anim {
+  animation: scale 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes scale {
+  to { transform: scale(1.01) }
+}
+*/
 .list-task-con {
     padding: 2rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     margin-bottom: 1.5rem;
-    border: 0px solid transparent;
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     background-color: var(--primary-color);
+/*    transition: 0.15s ease-out; */
+    transition: 0.3s ease-out;
+}
+
+.list-task-con:hover {
+    border: 2px solid #878787;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+/*     transform: scale(1.01);
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+*/
 }
 
 .task-one-row{
@@ -100,10 +118,10 @@ a:active {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #3cc360;
+    background-color: #56cb75;
     color: white;
     font-size: 20px;
-    border: 1px solid gray;    
     border-radius: 5px;
-    transition: opacity 0.5s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    transition: opacity 0.3s ease-in;
 }

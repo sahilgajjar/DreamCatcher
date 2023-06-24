@@ -41,7 +41,7 @@ def deltask(request, task_id):
     tasks = Task.objects.get(id=task_id)
     tasks.delete()
      
-    messages.success(request, 'Task Deleated Successfully !')
+    messages.success(request, 'Task Deleated Successfully 🗑️')
     
     return redirect('listtask')
 
@@ -56,7 +56,7 @@ def listtask(request):
 @login_required
 def addtask(request):
     
-    tasks = Task.objects.filter(complete=False).order_by('-id')[:3]
+    tasks = Task.objects.filter(complete=False).order_by('-id')[:4]
     
     if request.method == "POST":
         
@@ -74,6 +74,8 @@ def addtask(request):
             datetime=time,
             label=label
         ) 
+        
+        messages.success(request, ' Task Added Successfully 🎯')
         
         return redirect("addtask");
         
