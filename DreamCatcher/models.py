@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 class User(AbstractUser):
@@ -16,3 +17,6 @@ class Task(models.Model):
     
     def __str__(self):
         return f"{self.user} : {self.name}"
+
+    def getTime(self):
+        return self.datetime.strftime("%Y-%m-%d %I:%M %p")

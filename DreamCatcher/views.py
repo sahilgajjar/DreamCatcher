@@ -13,6 +13,10 @@ from django.contrib import messages
 # Create your views here.
 
 @login_required
+def notes(request):
+    return render(request, "DreamCatcher/notes.html")
+
+@login_required
 def markasdone_add(request, task_id):
     
     tasks = Task.objects.get(id=task_id)
@@ -57,7 +61,7 @@ def listtask(request):
 def addtask(request):
     
     tasks = Task.objects.filter(complete=False).order_by('-id')[:4]
-    
+     
     if request.method == "POST":
         
         content = request.POST 
@@ -66,7 +70,7 @@ def addtask(request):
         date_time = content["time"] 
         label = content["label"]
         time = datetime.strptime(date_time, "%Y-%m-%dT%H:%M")
-        
+         
         task = Task.objects.create(
             user=request.user,
             name=name,

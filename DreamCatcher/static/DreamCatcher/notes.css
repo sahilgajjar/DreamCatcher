@@ -1,1 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+main {
+    background-color: var(--bg-color);
+}
+
+.notes-inner-container {
+    text-align: center;
+    margin: 0rem;
+    padding: 0.8rem 0rem 0rem 0rem;
+}
+
+.notes-form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    width: 74rem;
+    font-weight: 200;
+}
+
+h4 {
+    font-weight: 400; 
+}
+
+.textarea-form {
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.area1-card {
+    margin-right: 0.5rem;
+}
+
+.area2-card {
+    margin-left: 0.5rem;
+}
+
+.area1-card h4, .area2-card h4{
+    padding-top: 1rem;
+    margin: 0px;
+    height: 2rem;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.area1-card h4 {
+    background-color: #87A7FE;
+}
+
+.area2-card h4 {
+    background-color: #FDD15B;
+}
+
+#textarea1 {
+    height: 64vh;
+}
+
+#textarea2 {
+    height: 64vh;
+}
+
+.textarea-form {
+    padding-top: 1rem;
+    background-color: var(--bg-color);
+}
+
+.input-container {
+    margin-top: 1.5rem;
+    margin-right: 1.3rem;
+    margin-left: 1.3rem;
+    padding-top: 1rem;
+    height: 3.5rem;
+    width: 74rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px dotted gray;
+}
+
+.reset {
+    font-size: 18px;
+    height: 2.5rem;
+    width: 8rem;
+    border: 1px solid #DDDEDE;
+    border-radius: 5px;
+    background-color: #FDD15B;
+}
+
+.submit {
+    font-size: 18px;
+    height: 2.5rem;
+    width: 8rem;
+    border: 1px solid #DDDEDE;
+    border-radius: 5px;
+    background-color: #FDD15B;
+} 

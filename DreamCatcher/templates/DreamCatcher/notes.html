@@ -5,8 +5,38 @@
     <link href="{% static 'DreamCatcher/notes.css' %}" rel="stylesheet">
 {% endblock %}
 
+{% block script %}
+{% endblock %}
 
 {% block main %}
+        <div class="notes-inner-container">
+            <form class="notes-form">
+                <h2>📝 Note to yourself  📝</h2>     
+            
+                <div class="textarea-form">
+                    <div class="area1-card">
+                        <h4>Today's Achievements 🏆</h4>
+                        <textarea cols=70 id="textarea1"></textarea>
+                    </div>
+                    <div class="area2-card">
+                        <h4>Today's Learnings 📚</h4>
+                        <textarea  cols=70 id="textarea2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div>
+                        <input class="reset" type="reset">
+                        <input class="submit" type="submit" value="Save">
+                    </div>
+                    
+                    <div>
+                        <input type="date">
+                    </div>
+                </div>
+                
+            </form>
+        </div>
 {% endblock %}
 
 
